@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+.basic{
+    /*Background*/
+    --main_background:hsl(222, 26%, 31%);
+    --keypad_background:hsl(223, 31%, 20%);
+    --screen_background:hsl(224, 36%, 15%);
+    /*keys*/
+    --sec_key_background:hsl(225, 21%, 49%);
+    --sec_key_shadow:hsl(224, 28%, 35%);
+
+    --equal_key_background:hsl(6, 63%, 50%);
+    --equal_key_shadow:hsl(6, 70%, 34%);
+
+    --primary_key_background:hsl(30, 25%, 89%);
+    --primary_key_shadow:hsl(28, 16%, 65%);
+
+    /*text*/
+    --screen_text:hsl(0, 0%, 100%);
+    --key_text:hsl(221, 14%, 31%);
+    --key_sec_text:hsl(0, 0%, 100%);
+    --key_equal_text:hsl(0, 0%, 100%);
+    /*hover key*/ 
+    --hover_button:hsl(0, 0%, 100%);
+    --hover_reset_del:#a2b3e1;
+    --hover_equal:#f96c5b;
+}
+.light{
+    /*Background*/
+    --main_background:hsl(0, 0%, 90%);
+    --keypad_background:hsl(0, 5%, 81%);
+    --screen_background:hsl(0, 0%, 93%);
+    /*keys*/
+    --sec_key_background:hsl(185, 42%, 37%);
+    --sec_key_shadow:hsl(185, 58%, 25%);
+
+    --equal_key_background:hsl(25, 98%, 40%);
+    --equal_key_shadow:hsl(25, 99%, 27%);
+
+    --primary_key_background:hsl(45, 7%, 89%);
+    --primary_key_shadow:hsl(35, 11%, 61%);
+
+    /*text*/
+    --screen_text:hsl(60, 10%, 19%);
+    --key_text:hsl(60, 10%, 19%);
+    --key_sec_text:hsl(0, 0%, 100%);
+    --key_equal_text:hsl(0, 0%, 100%);
+    /*hover key*/ 
+    --hover_button:hsl(0, 0%, 100%);
+    --hover_reset_del:#62b5bd;
+    --hover_equal:#ff8b38;
+}
+.dark{
+    /*Background*/
+    --main_background:hsl(268, 75%, 9%);
+    --keypad_background:hsl(268, 71%, 12%);
+    --screen_background:hsl(268, 71%, 12%);
+    /*keys*/
+    --sec_key_background:hsl(281, 89%, 26%);
+    --sec_key_shadow:hsl(285, 91%, 52%);
+
+    --equal_key_background:hsl(176, 100%, 44%);
+    --equal_key_shadow:hsl(177, 92%, 70%);
+
+    --primary_key_background:hsl(268, 47%, 21%);
+    --primary_key_shadow:hsl(290, 70%, 36%);
+
+    /*text*/
+    --screen_text:hsl(52, 100%, 62%);
+    --key_text:hsl(52, 100%, 62%);
+    --key_sec_text:hsl(0, 0%, 100%);
+    --key_equal_text:hsl(198, 20%, 13%);
+    /*hover key*/ 
+    --hover_button:#6b34ac;
+    --hover_reset_del:#8631b0;
+    --hover_equal:#94fff9;
+}
+body{
+    font-family: 'League Spartan', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: var(--main_background);
+}
+/*Container*/
+.container{
+    max-width: 450px;
+    margin-top: 1.5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*Header style*/
+header{
+    display: flex;
+    justify-content: space-between;
+    color: var(--screen_text);
+}
+.theme_container{
+    text-align: center;
+    display: flex;
+}
+.themes{
+    height: 80px;
+    width: 70px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.theme{
+    font-weight: 700;
+    margin: 0;
+    margin-top: 20px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--keypad_background);
+    cursor: pointer;
+    border-radius: 120px;
+    width: 65px;
+    height: 20px;
+    margin-top: 0px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    background-color: var(--equal_key_background);
+    height: 1.1rem;
+    width: 1.1rem; 
+    margin-left: 2px;
+    border: 2.2px solid var(--keypad_background);
+    border-radius: 100%;   
+ }
+form{
+    grid-column: span 3;
+}
+.theme_title{
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-top: 50px;
+    margin-right: 12px;
+}
+.calc{
+    margin-top: 40px;
+}
+/*Screen*/
+.screen{
+    background-color: var(--screen_background);
+    font-size: 1.5rem;
+    height: 100px;
+    border-radius: 8px;
+    color: var(--screen_text);
+    display: grid;
+    align-items: center;
+}
+#screen_calc{
+    text-align: right;
+    margin: 0;
+    padding-right:25px;
+}
+.button_board{
+    background-color: var(--keypad_background);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1.4rem;
+    margin-top: 20px;
+    padding: 25px;
+    
+}
+.button{
+    background-color: var(--primary_key_background);
+    color: var(--key_text);
+    font-weight: 700;
+    font-size: 1.6rem;
+    height: 50px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 0px var(--primary_key_shadow);
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center; 
+}
+
+.reset,.equal{
+    grid-column: span 2;
+}
+.equal{
+    color: var(--key_equal_text);
+    background-color:var(--equal_key_background) ;
+    box-shadow: 0px 4px 0px var(--equal_key_shadow); 
+}
+.reset,.del{
+    font-size: 1.4rem;
+    color: var(--key_sec_text);
+    background-color:var(--sec_key_background);
+    box-shadow: 0px 4px 0px var(--sec_key_shadow);}
+.button p{margin: 14px;}
+/*Hover over buttons*/
+.button:hover{
+    background-color: var(--hover_button);    
+}
+.reset:hover{
+    background-color:var(--hover_reset_del) ;
+}
+.del:hover{
+    background-color:var(--hover_reset_del);
+}
+.equal:hover{
+    background-color:var(--hover_equal);
+}
+/*Responsive*/
+@media screen and (max-width: 550px) {
+    .container{
+        margin: 0 20px;
+    }
+    .button_board
+    {
+        gap: 1rem;
+    }
+    .button{
+        padding: 4px;
+        width: 100%;
+    }
+  }
+  /*Copyrights*/
+  
+  #copyrights{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color:var(--screen_text);
+    margin-top: 10px;
+  }
+  
